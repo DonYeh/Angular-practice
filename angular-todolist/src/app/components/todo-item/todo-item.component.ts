@@ -16,9 +16,17 @@ export class TodoItemComponent implements OnInit {
   setClasses() {
     let classes = {
       todo: true,
-      "is-completed": this.todo.completed //because it's hyphenated, have to use quotation marks ''
+      "is-complete": this.todo.completed //because it's hyphenated, have to use quotation marks ''
     };
 
     return classes;
+  }
+
+  onToggle(todo) {
+    todo.completed = !todo.completed;
+  }
+
+  onDelete(todo) {
+    console.log("delete");
   }
 }
